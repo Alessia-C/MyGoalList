@@ -1,8 +1,8 @@
-# My Goal List
+# MyGoalList
 
 ## Description
 
-"My Goal List" is a project created to learn and improve knowledge of **TypeScript** and **React**. It is an application that allows users to add, view, and remove goals from a list. The goals data is saved in `localStorage` to ensure persistence even after the application is closed and reopened.
+"MyGoalList" is a project created to learn and improve knowledge of **TypeScript** and **React**. It is an application that allows users to add, view, and remove goals from a list. The goals data is saved in `localStorage` to ensure persistence even after the application is closed and reopened.
 
 This project was developed as a study exercise to explore the fundamentals of TypeScript and to enhance skills in building React applications with TypeScript.
 
