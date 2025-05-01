@@ -64,12 +64,21 @@ form p {
   margin: 0;
 }
 
-form p:nth-child(1){
-  margin-bottom: .6em;
+form p:nth-child(1) {
+  margin-bottom: 0.6em;
 }
 
 .wrap-list {
   flex: 2;
+  background: #fff;
+  padding: 1em;
+  border-radius: 8px;
+  height: 80vh;
+  overflow-y: auto;
+}
+
+.wrap-list img.no-data-image{
+  width: 150px;
 }
 
 label {
@@ -109,11 +118,6 @@ ul {
   display: flex;
   gap: 1rem;
   flex-direction: column;
-  background: #fff;
-  padding: 1em;
-  border-radius: 8px;
-  height: 80vh;
-  overflow-y: auto;
 }
 
 li {
@@ -127,9 +131,6 @@ li article {
   justify-content: space-between;
   align-items: flex-start;
 }
-li img {
-  width: 150px;
-}
 
 li h3 {
   margin: 0;
@@ -140,6 +141,7 @@ li h3 {
 li p {
   margin: 0;
   font-size: 1rem;
+  text-align: start;
 }
 
 li button {
@@ -152,4 +154,40 @@ li button {
 
 li button:hover {
   background-color: #be2e2e;
+}
+
+.infobox.infobox-warning {
+  background-color: #ffa8a885;
+  margin-top: 1em;
+  padding: 1rem;
+  border-radius: 4px;
+}
+.infobox.infobox-warning h3 {
+  text-align: center;
+  margin: 0;
+  color: #be2e2e;
+}
+.infobox.infobox-warning p{
+  margin: 0;
+}
+
+@media screen and (max-width: 600px) {
+  body{
+    overflow-y: auto;
+  }
+
+  main {
+    flex-direction: column;
+    gap: 1em;
+    overflow-y: auto;
+  }
+  
+  .App{
+    padding: 1em;
+  }
+
+  ul{
+    height: 500px;
+    overflow-y: auto;
+  }
 }

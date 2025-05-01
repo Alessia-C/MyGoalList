@@ -1,6 +1,8 @@
 import Goal from "./Goal";
 import { type GoalState as GoalInfo } from "../App";
 import EmptyStateImage from "../assets/nodata.svg";
+import InfoBox from "./InfoBox";
+import { ReactNode } from "react";
 
 type GoalListProps = {
   goals: GoalInfo[];
@@ -8,28 +10,41 @@ type GoalListProps = {
 };
 
 const GoalList = ({ goals, onDelete }: GoalListProps) => {
+  let warningBox: ReactNode;
+
+  if (goals.length >= 4) {
+    warningBox = (
+      <InfoBox mode="warning">You're collecting a lot of goals.</InfoBox>
+    );
+  }
+
   return (
-    <ul aria-live="polite" className="wrap-list">
+    <div className="wrap-list">
       {goals.length > 0 ? (
-        goals.map((goal) => (
-          <li key={goal.id}>
-            <Goal
-              id={goal.id}
-              title={goal.title}
-              onDelete={onDelete}
-              aria-label={`Goal: ${goal.title}`}
-            >
-              <p>{goal.description}</p>
-            </Goal>
-          </li>
-        ))
+        <>
+          <ul aria-live="polite">
+            {goals.map((goal) => (
+              <li key={goal.id}>
+                <Goal
+                  id={goal.id}
+                  title={goal.title}
+                  onDelete={onDelete}
+                  aria-label={`Goal: ${goal.title}`}
+                >
+                  <p>{goal.description}</p>
+                </Goal>
+              </li>
+            ))}
+          </ul>
+          {warningBox}
+        </>
       ) : (
-        <li>
-          <img src={EmptyStateImage} alt="empty data" />
-          <p>Your list is empty. Add a new goal!</p>
-        </li>
+        <InfoBox mode="hint">
+          <img src={EmptyStateImage} alt="empty data" className="no-data-image" />
+          <p>You have no goals yet.</p>
+        </InfoBox>
       )}
-    </ul>
+    </div>
   );
 };
 
