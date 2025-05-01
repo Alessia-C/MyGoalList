@@ -14,7 +14,7 @@ const GoalList = ({ goals, onDelete }: GoalListProps) => {
 
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning">You're collecting a lot of goals.</InfoBox>
+      <InfoBox mode="warning"><p>You're collecting a lot of goals.</p></InfoBox>
     );
   }
 

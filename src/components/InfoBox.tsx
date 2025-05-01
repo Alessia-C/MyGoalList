@@ -12,7 +12,7 @@ const InfoBox = ({ mode, children }: InfoBoxProps) => {
   return (
     <aside className={`infobox infobox-${classBox}`}>
       {mode === "warning" && <h3>Warning</h3>}
-      <p>{children}</p>
+      {children}
     </aside>
   );
 };
